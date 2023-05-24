@@ -1,7 +1,7 @@
 <?php include("template/header.php"); ?>
 
-<section class="hero"
-    style="background-image: url('img/safaebg.png'); background-size: 100% auto; background-position: top; object-fit: contain; height: 500px;">
+<section class="hero" style="background-image: url('img/safaebg.png'); background-position: top;
+    background-repeat: no-repeat; background-size: cover; height: 400px;">
     <br /><br /><br /><br />
     <div class="container">
         <div class="row">
@@ -25,22 +25,22 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="feature">
-                    <img class="" src="img/shipping-icon.png" width="20" alt="Fast Shipping">
-                    <h3>Envío Rápido</h3>
+                    <img class="" src="img/shipping-icon.png" width="20" alt="Fast Shipping"><h4>Envío Rápido</h4></img>
+                    
                     <p>Recibe tus productos en la puerta de tu hogar de manera rápida y eficiente.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature">
                     <img class="" src="img/quality-icon.png" width="20" alt="High-Quality Products">
-                    <h3>Productos de Alta Calidad</h3>
+                    <h4>Productos de Alta Calidad</h4>
                     <p>Nuestros productos cumplen con los más altos estándares de calidad.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature">
                     <img class="" src="img/support-icon.png" width="20" alt="24/7 Customer Support">
-                    <h3>Soporte al Cliente 24/7</h3>
+                    <h4>Soporte al Cliente 24/7</h4>
                     <p>Nuestro equipo de atención al cliente está disponible las 24 horas del día para ayudarte en lo
                         que necesites.</p>
                 </div>
