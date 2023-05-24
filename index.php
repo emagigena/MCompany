@@ -1,8 +1,8 @@
 <?php include("template/header.php"); ?>
 
 <section class="hero"
-    style="background-image: url('img/safaebg.png'); background-size: 100% auto; background-position: center; object-fit: contain; height: 500px;">
-    <br/><br/><br/><br/>
+    style="background-image: url('img/safaebg.png'); background-size: 100% auto; background-position: top; object-fit: contain; height: 500px;">
+    <br /><br /><br /><br />
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -49,44 +49,8 @@
     </div>
 </section>
 
-<section class="testimonial">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <blockquote>
-                                <p>"Me encantan los productos que compré en MCompany. Son de excelente calidad y el
-                                    servicio al cliente es excelente".</p>
-                                <footer> - Juan Pérez</footer>
-                            </blockquote>
-                        </div>
-                        <div class="carousel-item">
-                            <blockquote>
-                                <p>"MCompany ofrece una amplia gama de productos para elegir. Es mi tienda de confianza
-                                    para todas mis necesidades".</p>
-                                <footer> - María González</footer>
-                            </blockquote>
-                        </div>
-                        <div class="carousel-item">
-                            <blockquote>
-                                <p>"Recomiendo ampliamente MCompany. El proceso de compra es sencillo y los productos
-                                    siempre llegan a tiempo".</p>
-                                <footer> - Carlos Rodríguez</footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                    <ol class="carousel-indicators">
-                        <li data-target="#testimonial-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#testimonial-carousel" data-slide-to="1"></li>
-                        <li data-target="#testimonial-carousel" data-slide-to="2"></li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php include("template/testimonial.php")?>
+
 
 
 <?php include("template/footer.php"); ?>

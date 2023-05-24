@@ -15,7 +15,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
         <div class="container-fluid text-center">
-            <a class="navbar-brand" href="index.php">MCompany</a>
+            <a class="navbar-brand" href="index.php"><img width="50" src="img/safaelogo.png" alt=""/> MCompany</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,6 +30,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin/home.php">AdminSite</a>
                     </li>
                 </ul>
             </div>
