@@ -117,19 +117,20 @@ $productList = $sentenceSQL->fetchAll(PDO::FETCH_ASSOC);
             <form method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="txtID">ID:</label>
-                    <input type="text" required readonly class="form-control" value="<?php echo $txtID; ?>" name="txtID" id="txtID"
-                        placeholder="ID">
+                    <input type="text" required readonly class="form-control" value="<?php echo $txtID; ?>" name="txtID"
+                        id="txtID" placeholder="ID">
                 </div>
                 <div class="form-group">
                     <label for="txtName">Enter Name:</label>
-                    <input type="text" required class="form-control" value="<?php echo $txtName; ?>" name="txtName" id="txtName"
-                        placeholder="name">
+                    <input type="text" required class="form-control" value="<?php echo $txtName; ?>" name="txtName"
+                        id="txtName" placeholder="name">
                 </div>
                 <div class="form-group">
                     <label for="txtImage">Select Image:</label>
-                    <br/>
+                    <br />
                     <?php if ($txtImage != '') { ?>
-                        <img class="img-thumbnail rounded" src="../../img/<?php echo $txtImage ?>" width="400" height="" alt="" srcset="">
+                        <img class="img-thumbnail rounded" src="../../img/<?php echo $txtImage ?>" width="400" height=""
+                            alt="" srcset="">
                     <?php } ?>
                     <input type="file" class="form-control" value="<?php echo $txtImage; ?>" name="txtImage"
                         id="txtImage" placeholder="Enter Image">
@@ -146,9 +147,12 @@ $productList = $sentenceSQL->fetchAll(PDO::FETCH_ASSOC);
                 </div>
 
                 <div class="btn-group" role="group" aria-label="">
-                    <button type="submit" name="action" <?php echo($txtAction=="Select") ? "disabled" : ""; ?> value="Add" id="" class="btn btn-success">Add</button>
-                    <button type="submit" name="action" <?php echo($txtAction!="Select") ? "disabled" : ""; ?> value="Modify" id="" class="btn btn-warning">Modify</button>
-                    <button type="submit" name="action" <?php echo($txtAction!="Select") ? "disabled" : ""; ?> value="Cancel" id="" class="btn btn-info">Cancel</button>
+                    <button type="submit" name="action" <?php echo ($txtAction == "Select") ? "disabled" : ""; ?>
+                        value="Add" id="" class="btn btn-success">Add</button>
+                    <button type="submit" name="action" <?php echo ($txtAction != "Select") ? "disabled" : ""; ?>
+                        value="Modify" id="" class="btn btn-warning">Modify</button>
+                    <button type="submit" name="action" <?php echo ($txtAction != "Select") ? "disabled" : ""; ?>
+                        value="Cancel" id="" class="btn btn-info">Cancel</button>
                 </div>
             </form>
         </div>
@@ -184,17 +188,19 @@ $productList = $sentenceSQL->fetchAll(PDO::FETCH_ASSOC);
                         <?php echo $product['price'] ?>
                     </td>
                     <td>
-                        <img class="img-thumbnail rounded" src="../../img/<?php echo $product['image'] ?>" width="400" alt="" srcset="">
+                        <img class="img-thumbnail rounded" src="../../img/<?php echo $product['image'] ?>" width="400"
+                            alt="" srcset="">
 
                     </td>
                     <td>
                         <form method="post">
 
                             <input type="hidden" name="txtID" id="txtID" value="<?php echo $product['id'] ?>" />
-
-                            <input type="submit" name="action" value="Select" class="btn btn-primary" />
-
-                            <input type="submit" name="action" value="Delete" class="btn btn-danger" />
+                            <div class="list-group">
+                                <input type="submit" name="action" value="Select" class="btn btn-primary" />
+                                <br />
+                                <input type="submit" name="action" value="Delete" class="btn btn-danger" />
+                            </div>
                         </form>
                     </td>
                 </tr>

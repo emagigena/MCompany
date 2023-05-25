@@ -12,7 +12,7 @@
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
-
+    <!-- <?php $url = "http://" . $_SERVER['HTTP_HOST'] . "/mcompany" ?> -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
         <div class="container-fluid text-center">
             <a class="navbar-brand" href="index.php"><img width="50" src="img/safaelogo.png" alt=""/> MCompany</a>
@@ -32,7 +32,7 @@
                         <a class="nav-link" href="about.php">Acerca de</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin/home.php">AdminSite</a>
+                        <a class="nav-link" href="<?php echo $url; ?>">AdminSite</a>
                     </li>
                 </ul>
             </div>

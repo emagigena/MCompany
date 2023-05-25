@@ -64,6 +64,7 @@ $productList = $sentenceSQL->fetchAll(PDO::FETCH_ASSOC);
                             value="<?php echo $maxPrice; ?>">
                     </div>
                 </div>
+                <br />
                 <button type="submit" class="btn btn-primary">Filtrar</button>
             </form>
         </div>
@@ -71,18 +72,24 @@ $productList = $sentenceSQL->fetchAll(PDO::FETCH_ASSOC);
     <br>
     <div class="row">
         <?php foreach ($productList as $product) { ?>
-        <div class="col-md-3">
-            <div class="card h-100">
-                <img class="card-img-top img-thumbnail" src="./img/<?php echo $product['image']; ?>" alt=""
-                    style="height: 200px; object-fit: contain;">
-                <div class="card-body">
-                    <h4 class="card-title"><?php echo $product['name']; ?></h4>
-                    <p class="card-text">Precio: $<?php echo $product['price']; ?></p>
-                    <a name="" class="btn btn-primary" href="#" role="button">Mostrar más</a>
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <img class="card-img-top img-thumbnail" src="./img/<?php echo $product['image']; ?>" alt=""
+                        style="height: 200px; object-fit: contain;">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <?php echo $product['name']; ?>
+                        </h4>
+                        <p class="card-text">Precio: $
+                            <?php echo $product['price']; ?>
+                        </p>
+                        <a class="btn btn-primary" href="add_to_cart.php?product_id=<?php echo $product['id']; ?>"
+                            role="button">Agregar al carrito</a>
+                    </div>
                 </div>
             </div>
-        </div>
         <?php } ?>
+
     </div>
 </div>
 <br>
