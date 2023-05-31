@@ -20,6 +20,22 @@ if (isset($_GET['remove']) && !empty($_GET['remove'])) {
     exit();
 }
 
+// Verificar si se generó la orden
+if (isset($_GET['order_success'])) {
+    $cartItems = array(); // Vaciar el carrito
+}
+
+// Limpiar el carrito (eliminar todos los elementos)
+if (isset($_GET['clear_cart'])) {
+    $clearQuery = $conection->prepare("DELETE FROM cart");
+    $clearQuery->execute();
+
+    // Redirigir nuevamente a cart.php para actualizar la vista
+    header("Location: cart.php");
+    exit();
+}
+
+
 ?>
 
 <div class="container">
@@ -34,9 +50,16 @@ if (isset($_GET['remove']) && !empty($_GET['remove'])) {
                 <th>Acciones</th>
             </tr>
         </thead>
+        <div class="container">
+            <!-- ... -->
+
+            <h2>Acciones del Carrito</h2>
+            <a href="cart.php?clear_cart" class="btn btn-danger">Limpiar Carrito</a>
+
+        </div>
         <tbody>
             <?php foreach ($cartItems as $item) { ?>
-                <tr>
+                <tr required>
                     <td>
                         <?php echo $item['name']; ?>
                     </td>
@@ -71,6 +94,10 @@ if (isset($_GET['remove']) && !empty($_GET['remove'])) {
             <label for="address">Dirección</label>
             <input type="text" name="address" class="form-control" required>
         </div>
+        <?php foreach ($cartItems as $item) { ?>
+            <input type="hidden" name="products[]"
+                value="<?php echo $item['id'] . '|' . $item['name'] . '|' . $item['quantity'] . '|' . $item['price']; ?>">
+        <?php } ?>
         <button type="submit" class="btn btn-primary">Realizar Pedido</button>
     </form>
 </div>
